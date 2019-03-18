@@ -17,9 +17,7 @@ ENTa = Entry(top)
 ENTa.grid(row = 2, column = 1) # user entry for cross section area of the hole
 
 def DrainCalc(): # function that calculates the drain time to be assigned to a button
-    
     try:
-
         # gets entries as strings from entry box
         H = ENTH.get() 
         A = ENTA.get()
@@ -42,7 +40,6 @@ def DrainCalc(): # function that calculates the drain time to be assigned to a b
         messagebox.showinfo("Calculate" , "Your entries must be greater than zero.")
 
     finally:
-
         hours = drain / 3600 # drain time in hours
         mins = drain / 60 - int(hours)*60 # drain time in mins
         sec = drain % 60 # drain time seconds left over
@@ -56,8 +53,6 @@ def DrainCalc(): # function that calculates the drain time to be assigned to a b
         else:
             messagebox.showinfo("Calculate" , "The time it takes for the liquid to drain is: " + str(int(hours)) + " hours " + str(int(mins)) + " minutes and " + str(int(sec)) +  " seconds. ") # Displays hours, minutes, and seconds for drainage
 
-
 BTN  = Button(top, text = "Calculate" , command = DrainCalc) # button that when clicked will calculate drain time
 BTN.grid(row = 6, column = 1)
-
 top.mainloop()
